@@ -20,3 +20,7 @@ Após todo processo do Docker, o projeto pode ser acessado pela URL **http://loc
 O banco de dados está disponível para acesso pela URL **http://localhost:8090** e as credenciais para se conectar são:\
 **username**: root\
 **password**: password
+
+Neste projeto foi utilizado o conceito de ***migrate*** do Laravel, portanto, basta executar o comando abaixo no terminal para que as tabelas do banco sejam criadas automaticamente.
+
+``docker exec -it meu-campeonato-backend php artisan migrate``
