@@ -11,23 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teams_statistics', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->id();
+        Schema::create('historics', function (Blueprint $table) {
             $table->unsignedBigInteger('championship_id');
             $table->foreign('championship_id')->references('id')->on('championships')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger('team_id');
-            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('points');
+            $table->integer('first_place_team_id')->nullable(false);
+            $table->integer('second_place_team_id')->nullable(false);
+            $table->integer('third_place_team_id')->nullable(false);
+            $table->integer('fourth_place_team_id')->nullable(false);
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('teams_statistics');
+        Schema::dropIfExists('historics');
     }
 };
