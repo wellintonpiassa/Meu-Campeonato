@@ -15,15 +15,15 @@ Para inicializar basta estar na raiz do projeto e executar em um terminal os com
 
 ``docker compose up``
 
-Após todo processo do Docker, o projeto pode ser acessado pela URL **http://localhost:4200**.
+Posteriormente, deve ser criar as tabelas do banco de dados, e como neste projeto foi utilizado o conceito de ***migrate*** do Laravel, basta executar o comando abaixo no terminal para que as tabelas do banco sejam criadas automaticamente.
+
+``docker exec -it meu-campeonato-backend php artisan migrate``
 
 O banco de dados está disponível para acesso pela URL **http://localhost:8090** e as credenciais para se conectar são:\
 **username**: root\
 **password**: password
 
-Neste projeto foi utilizado o conceito de ***migrate*** do Laravel, portanto, basta executar o comando abaixo no terminal para que as tabelas do banco sejam criadas automaticamente.
+Após todo processo do Docker, o front-end do projeto pode ser acessado pela URL **http://localhost:4200**, e o backend está escutando na porta 3000.
 
-``docker exec -it meu-campeonato-backend php artisan migrate``
-
-Além disso, foi realizada a imṕlementação de ***seeder*** para alimentar o banco de times automaticamente. Para realizar esse processo basta executar o comando
+Além disso, foi realizada a implementação de ***seeder*** para alimentar o banco de times de futebol automaticamente. Para realizar esse processo basta executar o comando
 ``docker exec -it meu-campeonato-backend php artisan db:seed``
