@@ -42,7 +42,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: meu_campeonato
-      MYSQL_ROOT-PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
     networks:
       - app-network
 
