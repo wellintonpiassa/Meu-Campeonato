@@ -2,12 +2,13 @@
 ### Detalhes
 Para o desenvolvimento do projeto foram utilizadas as seguintes ferramentas:\
 
-**Back-end:** Laravel\
-**Front-end:** Angular\
+**Back-end:** Laravel 10\
+**Front-end:** Angular 16\
 **Banco de dados:** MySQL
 
 ### Instruções para executar o projeto:
 Todo o projeto está dockerizado, portanto, necessita que tenha instalado Docker em sua máquina (saiba mais em https://www.docker.com).
+A autenticação do usuário no projeto foi criada com base em JWT.
 
 Para inicializar basta estar na raiz do projeto e executar em um terminal os comandos abaixo:
 
