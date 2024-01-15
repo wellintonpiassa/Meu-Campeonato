@@ -24,3 +24,6 @@ O banco de dados está disponível para acesso pela URL **http://localhost:8090*
 Neste projeto foi utilizado o conceito de ***migrate*** do Laravel, portanto, basta executar o comando abaixo no terminal para que as tabelas do banco sejam criadas automaticamente.
 
 ``docker exec -it meu-campeonato-backend php artisan migrate``
+
+Além disso, foi realizada a imṕlementação de ***seeder*** para alimentar o banco de times automaticamente. Para realizar esse processo basta executar o comando
+``docker exec -it meu-campeonato-backend php artisan db:seed``
