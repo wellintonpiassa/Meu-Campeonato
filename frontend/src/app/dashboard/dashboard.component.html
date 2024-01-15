@@ -1,0 +1,81 @@
+<div class="container d-flex">
+  <div class="d-flex flex-column flex-shrink-0 border p-3 bg-body-tertiary col-2">
+    <a href="/" class="d-flex flex-column mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <span class="fs-4 mb-2">Painel</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/painel']" routerLinkActive="router-link-active"  class="nav-link active" aria-current="page">
+          Campeonato
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/historico']" routerLinkActive="router-link-active"  class="nav-link link-body-emphasis">
+          Histórico
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-10 ps-5">
+    <form [formGroup]="formSimulate" (ngSubmit)="submit()" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+      <h1 class="mb-2">Vamos começar!</h1>
+      <p class="text-body-secondary">Primeiro dê um nome ao campeonato</p>
+      <div class="form-floating mb-3 w-50">
+        <input formControlName="championshipName" required type="text" class="form-control" id="floatingInput" placeholder="Nome do campeonato">
+        <label for="floatingInput">Nome do campeonato</label>
+      </div>
+
+      <div>
+        <p class="text-body-secondary">Agora selecione os 8 times pela ordem que vão se enfrentar</p>
+        <div class="d-flex">
+          <div class="w-75">
+            <ng-multiselect-dropdown
+              [placeholder]="'Times'"
+              [settings]="dropdownSettings"
+              [data]="dropdownList"
+              [(ngModel)]="selectedItems"
+              (onSelect)="onItemSelect($event)"
+              (onSelectAll)="onSelectAll($event)"
+              formControlName="teams">
+            </ng-multiselect-dropdown>
+          </div>
+          <button type="button" class="btn btn-primary w-25 mx-3" data-bs-toggle="modal" data-bs-target="#newTeamModal">
+            Cadastrar novo time
+          </button>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary w-25 my-3">
+        Simular
+      </button>
+    </form>
+
+    <div class="modal fade" id="newTeamModal" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="teamModalLabel">Informação do time</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form [formGroup]="formNewTeam" (ngSubmit)="registerTeam()">
+                      <div class="form-floating mb-3 w-50">
+                        <input formControlName="teamName" type="text" class="form-control" id="floatingInput" placeholder="Nome do time">
+                        <label for="floatingInput">Nome do time</label>
+                      </div>
+                      <button type="button" class="btn btn-ouline me-3" data-bs-dismiss="modal">Fechar</button>
+                      <button  type="submit" class="btn btn-primary">Salvar</button>
+                  </form>
+                </div>
+                <div class="px-3 alert alert-{{this.messageType}}" role="alert">
+                  {{this.message}}
+                </div>
+          </div>
+      </div>
+    </div>
+
+    <app-table></app-table>
+  </div>
+</div>
+<app-footer></app-footer>

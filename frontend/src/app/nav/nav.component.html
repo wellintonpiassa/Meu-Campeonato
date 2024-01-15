@@ -1,0 +1,16 @@
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <div class="col-6">
+      <a [routerLink]="['/']" routerLinkActive="router-link-active fw-bold text-decoration-none">Início</a>
+    </div>
+    
+    <div class="col-6 text-end" *ngIf="!authenticated">
+      <a routerLink="/" class="btn btn-outline-primary me-2">Entrar</a>
+      <a routerLink="/cadastrar" class="btn btn-primary">Cadastrar-se</a>
+    </div>
+
+    <div class="col-6 text-end" *ngIf="authenticated">
+      <a href="/" class="btn btn-primary" (click)="logout()">Sair</a>
+    </div>
+  </header>
+</div>

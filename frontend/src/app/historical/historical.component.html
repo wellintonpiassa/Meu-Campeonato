@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+    <a href="/" class="d-flex flex-column mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <span class="fs-4 mb-2">Painel</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/painel']" routerLinkActive="router-link-active" class="nav-link link-body-emphasis" aria-current="page">
+          Campeonato
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/historico']" routerLinkActive="router-link-active"  class="nav-link active">
+          Histórico
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
