@@ -22,7 +22,8 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libzip-dev \
     libgd-dev \
-    libpq-dev
+    libpq-dev \
+    python3
 
 # Limpando cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
