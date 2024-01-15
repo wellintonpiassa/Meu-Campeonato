@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "b36cc0f3-6a2c-4c66-b896-27230adf8cd2",
+		"name": "Meu Campeonato",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31528445"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Usuario Teste\",\n    \"email\": \"usuario@teste.com.br\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"usuario@teste.com.br\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\n//     \"email\": \"usuario@teste.com.br\",\n//     \"password\": \"123456\"\n// }\n\n{\n    \"email\": \"wellinton@email.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/teams/all"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Championship",
+			"item": [
+				{
+					"name": "Simulate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"championshipName\": \"Copa do Brasil\",\n    \"teams\": [\n        {\"id\": 0, \"name\": \"Botafogo\"},\n        {\"id\": 1, \"name\": \"Flamengo\"},\n        {\"id\": 2, \"name\": \"Palmeiras\"},\n        {\"id\": 3, \"name\": \"Corinthians\"},\n        {\"id\": 4, \"name\": \"São Paulo\"},\n        {\"id\": 5, \"name\": \"Bragantino\"},\n        {\"id\": 6, \"name\": \"Fluminense\"},\n        {\"id\": 7, \"name\": \"Vasco\"}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/simulate"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
